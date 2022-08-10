@@ -1,0 +1,1 @@
+const int greenColor = 0xff;
