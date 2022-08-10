@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sherbby_app/screens/auth_screens/register_option.dart';
+import 'package:sherbby_app/screens/auth_screens/veri_fication.dart';
 import 'package:sherbby_app/screens/home_screen/home.dart';
+import 'package:sherbby_app/widgets/button_widget.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
 
 import '../../widgets/ctext_field.dart';
 
@@ -78,8 +81,8 @@ class _EmailPhoneState extends State<EmailPhone> {
             ),
           ],
         ),
-        body: SafeArea(
-          child: SingleChildScrollView(
+        body: SingleChildScrollView(
+          child: SafeArea(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: Column(
@@ -139,11 +142,11 @@ class _EmailPhoneState extends State<EmailPhone> {
                   ),
                   Container(
                     width: double.maxFinite,
-                    height: 400,
+                    height: MediaQuery.of(context).size.height,
                     child: TabBarView(
                       children: [
                         registerViaEmail(),
-                        Text("there"),
+                        registerViaPhone(),
                       ],
                     ),
                   )
@@ -158,8 +161,7 @@ class _EmailPhoneState extends State<EmailPhone> {
 
   registerViaEmail() {
     return Container(
-      width: double.maxFinite,
-      height: 400,
+      width: MediaQuery.of(context).size.width,
       child: Column(children: [
         CTextField(
           title: 'E-mail',
@@ -189,23 +191,254 @@ class _EmailPhoneState extends State<EmailPhone> {
             )
           ],
         ),
+        SizedBox(
+          height: 20,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(
+              height: 20.0,
+              width: 20.0,
+              child: Checkbox(
+                checkColor: Colors.white,
+                activeColor: Colors.amber,
+                value: isChecked,
+                shape: CircleBorder(),
+                onChanged: (bool? value) {
+                  setState(() {
+                    isChecked = value!;
+                  });
+                },
+              ),
+            ),
+            SizedBox(
+              width: 20,
+            ),
+            RichText(
+              text: TextSpan(
+                children: [
+                  TextSpan(
+                      text: "J'ai lu et j'accepte les",
+                      style:
+                          TextStyle(color: Colors.grey.shade400, fontSize: 16)),
+                  TextSpan(
+                      text: "Conditions d'utilisation\n",
+                      style: TextStyle(
+                          color: Colors.brown.shade500, fontSize: 16)),
+                  TextSpan(
+                      text: "et la ",
+                      style:
+                          TextStyle(color: Colors.grey.shade400, fontSize: 16)),
+                  TextSpan(
+                      text: "Politique de confidentialite",
+                      style: TextStyle(
+                          color: Colors.brown.shade500, fontSize: 16)),
+                  TextSpan(
+                      text: "de Binance.",
+                      style: TextStyle(
+                          color: Colors.brown.shade500, fontSize: 16)),
+                ],
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(
+              height: 20.0,
+              width: 20.0,
+              child: Checkbox(
+                checkColor: Colors.white,
+                activeColor: Colors.amber,
+                value: isChecked,
+                shape: CircleBorder(),
+                onChanged: (bool? value) {
+                  setState(() {
+                    isChecked = value!;
+                  });
+                },
+              ),
+            ),
+            SizedBox(
+              width: 20,
+            ),
+            Text(
+              "J'accepte de recevoir des mises a jour par e-\nmail de Binance",
+              style: TextStyle(fontSize: 16, color: Colors.grey.shade400),
+            )
+          ],
+        ),
+        SizedBox(
+          height: 30,
+        ),
+        ButtonWidget(
+            onTap: () {},
+            title: "Creer un compte",
+            colors: Colors.amberAccent,
+            fontSize: 16),
+        SizedBox(
+          height: 20,
+        ),
+        Row(
+          children: [
+            Text(
+              "Deja inscrit ?",
+              style: TextStyle(
+                  color: Colors.grey.shade400,
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold),
+            ),
+            GestureDetector(
+              child: Text(
+                " Se connecter",
+                style: TextStyle(
+                    color: Colors.brown.shade500,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold),
+              ),
+            )
+          ],
+        ),
+      ]),
+    );
+  }
+
+  registerViaPhone() {
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      child: Column(children: [
+        SizedBox(
+          height: 10,
+        ),
+        IntlPhoneField(
+          decoration: InputDecoration(
+            fillColor: Colors.grey.shade200,
+            filled: true,
+            border: InputBorder.none,
+            labelText: 'Numero de telephone',
+          ),
+          initialCountryCode: 'CA',
+          onChanged: (phone) {
+            print(phone.completeNumber);
+          },
+        ),
+        SizedBox(
+          height: 25,
+        ),
+        CTextField(
+          title: "Mot de passe",
+          isObscure: true,
+        ),
+        SizedBox(
+          height: 20,
+        ),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Checkbox(
-              checkColor: Colors.white,
-              activeColor: Colors.amber,
-              value: isChecked,
-              shape: CircleBorder(),
-              onChanged: (bool? value) {
-                setState(() {
-                  isChecked = value!;
-                });
-              },
+            Text(
+              "ID de parrainage (facultatif)",
+              style: TextStyle(fontSize: 16, color: Colors.grey.shade500),
             ),
-
+            Icon(
+              Icons.arrow_drop_down_outlined,
+              size: 28,
+              color: Colors.grey.shade500,
+            )
           ],
-        )
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(
+              height: 20.0,
+              width: 20.0,
+              child: Checkbox(
+                checkColor: Colors.white,
+                activeColor: Colors.amber,
+                value: isChecked,
+                shape: CircleBorder(),
+                onChanged: (bool? value) {
+                  setState(() {
+                    isChecked = value!;
+                  });
+                },
+              ),
+            ),
+            SizedBox(
+              width: 20,
+            ),
+            RichText(
+              text: TextSpan(
+                children: [
+                  TextSpan(
+                      text: "J'ai lu et j'accepte les",
+                      style:
+                          TextStyle(color: Colors.grey.shade400, fontSize: 16)),
+                  TextSpan(
+                      text: "Conditions d'utilisation\n",
+                      style: TextStyle(
+                          color: Colors.brown.shade500, fontSize: 16)),
+                  TextSpan(
+                      text: "et la ",
+                      style:
+                          TextStyle(color: Colors.grey.shade400, fontSize: 16)),
+                  TextSpan(
+                      text: "Politique de confidentialite",
+                      style: TextStyle(
+                          color: Colors.brown.shade500, fontSize: 16)),
+                  TextSpan(
+                      text: "de Binance.",
+                      style: TextStyle(
+                          color: Colors.brown.shade500, fontSize: 16)),
+                ],
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 30,
+        ),
+        ButtonWidget(
+            onTap: () {Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Verification()));},
+            title: "Creer un compte",
+            colors: Colors.amberAccent,
+            fontSize: 16),
+        SizedBox(
+          height: 20,
+        ),
+        Row(
+          children: [
+            Text(
+              "Deja inscrit ?",
+              style: TextStyle(
+                  color: Colors.grey.shade400,
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold),
+            ),
+            GestureDetector(
+              child: Text(
+                " Se connecter",
+                style: TextStyle(
+                    color: Colors.brown.shade500,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold),
+              ),
+            )
+          ],
+        ),
       ]),
     );
   }
