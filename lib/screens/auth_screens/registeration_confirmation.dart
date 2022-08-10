@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sherbby_app/screens/auth_screens/email_phone.dart';
 import 'package:sherbby_app/screens/home_screen/home.dart';
+import 'package:sherbby_app/widgets/button_widget.dart';
 
 class RegisterConfirmation extends StatelessWidget {
   const RegisterConfirmation({Key? key}) : super(key: key);
@@ -103,18 +104,9 @@ class RegisterConfirmation extends StatelessWidget {
                 Text("Le processus d'inscription peut etre modifie sur la base des informations que fournissez",style: TextStyle(color: Colors.grey.shade400,
                   fontSize: 14,),),
                 SizedBox(height: 30,),
-                SizedBox(
-                  height: 60,
-                  width: MediaQuery.of(context).size.width,
-                  child: ElevatedButton(onPressed: (){
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => EmailPhone()));
-                  },
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(Colors.amberAccent),
-                      ),
-                      child: Text("Confirmer",style: TextStyle(color: Colors.black,fontSize: 16),)),
-                ),
+                ButtonWidget(onTap: (){
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>EmailPhone()));
+                }, title: "Confirmer",height: 60,colors: Colors.amberAccent,fontSize: 16,)
               ],
             ),
           ),

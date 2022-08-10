@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sherbby_app/screens/auth_screens/register_screen.dart';
 import 'package:sherbby_app/screens/auth_screens/registeration_confirmation.dart';
+import 'package:sherbby_app/widgets/button_widget.dart';
 
 class RegisterOption extends StatelessWidget {
   const RegisterOption({Key? key}) : super(key: key);
@@ -46,32 +48,10 @@ class RegisterOption extends StatelessWidget {
                           SizedBox(
                             height: 25,
                           ),
-                          SizedBox(
-                              height: 50,
-                              width: double.infinity,
-                              child: ElevatedButton(
-                                onPressed: () {
-                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => RegisterConfirmation()));
-                                },
-                                style: ButtonStyle(
-                                  shape: MaterialStateProperty.all<
-                                          RoundedRectangleBorder>(
-                                      RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.zero,
-                                          side: BorderSide(
-                                              color: Colors.grey.shade300))),
-                                  backgroundColor: MaterialStateProperty.all(
-                                      Colors.grey.shade300),
-                                  elevation: MaterialStateProperty.all(0.0),
-                                ),
-                                child: Text(
-                                  "Inscrivez-vous par telephone ou par e-mail",
-                                  style: TextStyle(
-                                      fontSize: 12,
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              )),
+                       ButtonWidget(onTap: (){
+                         Navigator.of(context).push(
+                             MaterialPageRoute(builder: (context) => RegisterScreen()));
+                       }, title: "Inscrivez-vous par telephone ou par e-mail", colors: Colors.grey.shade300),
                           SizedBox(
                             height: 30.0,
                           ),
