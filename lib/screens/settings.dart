@@ -54,7 +54,6 @@ class _SettingsState extends State<Settings> with SingleTickerProviderStateMixin
 
 
           ]),
-
     );
   }
 
