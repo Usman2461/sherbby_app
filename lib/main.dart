@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sherbby_app/screens/auth_screens/forget_password.dart';
 import 'package:sherbby_app/screens/splash_screen/splashscreen.dart';
 
+import 'l10n/l10n.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -20,6 +22,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: SplashScreen(),
+      supportedLocales: L10n.all,
     );
   }
 }
