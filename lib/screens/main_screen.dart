@@ -3,6 +3,10 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:sherbby_app/screens/auth_screens/register_screen.dart';
 import 'package:sherbby_app/screens/home_screen/home.dart';
+import 'package:sherbby_app/screens/settings.dart';
+
+import 'chat_screen/chat_screen.dart';
+import 'notifications_screen/notifications_screen.dart';
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
 
@@ -41,10 +45,10 @@ class _MainScreenState extends State<MainScreen>  with SingleTickerProviderState
           controller: tabController,
           children: [
             Home(),
+            NotificationsScreen(),
             Home(),
-            Home(),
-            Home(),
-            RegisterScreen(),
+            ChatScreen(),
+            Settings(),
 
           ]),
       bottomNavigationBar: bottomNavigationBar(),
