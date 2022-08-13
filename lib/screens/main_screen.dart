@@ -7,6 +7,7 @@ import 'package:sherbby_app/screens/settings.dart';
 
 import 'chat_screen/chat_screen.dart';
 import 'notifications_screen/notifications_screen.dart';
+import 'offers_screen/offers_screen.dart';
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
 
@@ -46,7 +47,7 @@ class _MainScreenState extends State<MainScreen>  with SingleTickerProviderState
           children: [
             Home(),
             NotificationsScreen(),
-            Home(),
+            OffersScreen(),
             ChatScreen(),
             Settings(),
 

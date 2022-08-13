@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:sherbby_app/screens/home_screen/home.dart';
 
+import '../widgets/settings_tile.dart';
+
 class Settings extends StatefulWidget {
   const Settings({Key? key}) : super(key: key);
 
@@ -45,20 +47,21 @@ class _SettingsState extends State<Settings>
                   "Annonces",
                   style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
                 ),
-                ListTile(
-                  leading: Image(image: AssetImage("assets/images/nav1.png")),
-                  title: Text(
-                    "Mes annonces",
-                    style: TextStyle(fontSize: 16.0),
-                  ),
+                SizedBox(height: 10.0,),
+                SettingsTile(iconImg: 'set1.png', text: 'Mes annonces',),
+                SettingsTile(iconImg: 'set2.png', text: 'Mes favoris',),
+                Text(
+                  "Reglages",
+                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
                 ),
-                ListTile(
-                  leading: Image(image: AssetImage("assets/images/nav1.png")),
-                  title: Text(
-                    "Mes annonces",
-                    style: TextStyle(fontSize: 16.0),
-                  ),
-                ),
+                SizedBox(height: 10.0,),
+                SettingsTile(iconImg: 'set3.png', text: 'Photo',),
+                SettingsTile(iconImg: 'set4.png', text: 'Nom',),
+                SettingsTile(iconImg: 'set5.png', text: 'Phone',),
+                SettingsTile(iconImg: 'set6.png', text: 'Email',),
+                SettingsTile(iconImg: 'set7.png', text: 'Mot de passe',),
+                SettingsTile(iconImg: 'set9.png', text: 'Notifications',),
+                SettingsTile(iconImg: 'set10.png', text: 'Supprimer le compte',),
               ],
             ),
           ),

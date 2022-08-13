@@ -3,6 +3,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:sherbby_app/widgets/gridWidgets.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+import '../screens/post_screen/post_screen.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -79,7 +81,9 @@ class _HomePageState extends State<HomePage> {
               children: [
                 GridWidget(
                   urltext: 'Search Vehicle',
-                  ontap: () {},
+                  ontap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>PostScreen()));
+                  },
                   urlimage: 'assets/images/1.png',
                 ),
                 GridWidget(

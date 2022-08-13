@@ -222,23 +222,23 @@ class _EmailPhoneState extends State<EmailPhone> {
                   TextSpan(
                       text: "J'ai lu et j'accepte les",
                       style:
-                          TextStyle(color: Colors.grey.shade400, fontSize: 16)),
+                          TextStyle(color: Colors.grey.shade400, fontSize: 14)),
                   TextSpan(
-                      text: "Conditions d'utilisation\n",
+                      text: " Conditions d'utilisation\n",
                       style: TextStyle(
-                          color: Colors.brown.shade500, fontSize: 16)),
+                          color: Colors.brown.shade500, fontSize: 14)),
                   TextSpan(
                       text: "et la ",
                       style:
-                          TextStyle(color: Colors.grey.shade400, fontSize: 16)),
+                          TextStyle(color: Colors.grey.shade400, fontSize: 14)),
                   TextSpan(
                       text: "Politique de confidentialite",
                       style: TextStyle(
-                          color: Colors.brown.shade500, fontSize: 16)),
+                          color: Colors.brown.shade500, fontSize: 14)),
                   TextSpan(
                       text: "de Binance.",
                       style: TextStyle(
-                          color: Colors.brown.shade500, fontSize: 16)),
+                          color: Colors.brown.shade500, fontSize: 14)),
                 ],
               ),
               textAlign: TextAlign.center,
@@ -272,7 +272,8 @@ class _EmailPhoneState extends State<EmailPhone> {
             ),
             Text(
               "J'accepte de recevoir des mises a jour par e-\nmail de Binance",
-              style: TextStyle(fontSize: 16, color: Colors.grey.shade400),
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(fontSize: 14, color: Colors.grey.shade400),
             )
           ],
         ),
@@ -345,7 +346,7 @@ class _EmailPhoneState extends State<EmailPhone> {
           children: [
             Text(
               "ID de parrainage (facultatif)",
-              style: TextStyle(fontSize: 16, color: Colors.grey.shade500),
+              style: TextStyle(fontSize: 14, color: Colors.grey.shade500),
             ),
             Icon(
               Icons.arrow_drop_down_outlined,
@@ -385,23 +386,23 @@ class _EmailPhoneState extends State<EmailPhone> {
                   TextSpan(
                       text: "J'ai lu et j'accepte les",
                       style:
-                          TextStyle(color: Colors.grey.shade400, fontSize: 16)),
+                          TextStyle(color: Colors.grey.shade400, fontSize: 14)),
                   TextSpan(
                       text: "Conditions d'utilisation\n",
                       style: TextStyle(
-                          color: Colors.brown.shade500, fontSize: 16)),
+                          color: Colors.brown.shade500, fontSize: 14)),
                   TextSpan(
                       text: "et la ",
                       style:
-                          TextStyle(color: Colors.grey.shade400, fontSize: 16)),
+                          TextStyle(color: Colors.grey.shade400, fontSize: 14)),
                   TextSpan(
                       text: "Politique de confidentialite",
                       style: TextStyle(
-                          color: Colors.brown.shade500, fontSize: 16)),
+                          color: Colors.brown.shade500, fontSize: 14)),
                   TextSpan(
                       text: "de Binance.",
                       style: TextStyle(
-                          color: Colors.brown.shade500, fontSize: 16)),
+                          color: Colors.brown.shade500, fontSize: 14)),
                 ],
               ),
               textAlign: TextAlign.center,

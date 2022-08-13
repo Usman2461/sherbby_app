@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:sherbby_app/screens/home_screen/home.dart';
+import 'package:sherbby_app/screens/main_screen.dart';
 import 'package:sherbby_app/screens/settings.dart';
 import 'package:sherbby_app/widgets/button_widget.dart';
 import 'package:sherbby_app/widgets/ctext_field.dart';
+
+import '../add_post/add_post.dart';
 
 class Verification extends StatelessWidget {
   const Verification({Key? key}) : super(key: key);
@@ -104,7 +107,7 @@ class Verification extends StatelessWidget {
                 SizedBox(height: 20,),
                 Text("Verification de securite indisponible ?",style: TextStyle(color: Colors.amber,fontSize: 16),),
                 SizedBox(height: 30,),
-                ButtonWidget(onTap: (){Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Settings()));}, title: "Envoyer",colors: Colors.amberAccent,fontSize: 18,)
+                ButtonWidget(onTap: (){Navigator.of(context).push(MaterialPageRoute(builder: (context)=>AddPost()));}, title: "Envoyer",colors: Colors.amberAccent,fontSize: 18,)
               ],
             ),
           ),
