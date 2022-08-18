@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:sherbby_app/providers/theme_provider.dart';
 import 'package:sherbby_app/screens/auth_screens/register_option.dart';
 import 'package:sherbby_app/screens/auth_screens/registeration_confirmation.dart';
 import 'package:sherbby_app/widgets/button_widget.dart';
-
+import 'package:provider/provider.dart';
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({Key? key}) : super(key: key);
 
@@ -24,7 +25,16 @@ class RegisterScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+
+              ThemeProvider themeProvider = Provider.of<ThemeProvider>(context, listen: false);
+              if( themeProvider.themeMode==ThemeMode.light) {
+                themeProvider.changeTheme(ThemeMode.dark);
+              } else {
+                themeProvider.changeTheme(ThemeMode.light);
+              }
+
+            },
             icon: ImageIcon(
               AssetImage("assets/images/moon.png"),
               color: Colors.grey,

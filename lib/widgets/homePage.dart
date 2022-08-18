@@ -16,10 +16,9 @@ class _HomePageState extends State<HomePage> {
   int activeIndex = 0;
   List<String> sliderimage = [
     "assets/images/banner.png",
-    "assets/images/1.png",
-    "assets/images/2.png",
-    "assets/images/3.png",
-    "assets/images/4.png",
+    "assets/images/banner.png",
+    "assets/images/banner.png",
+    "assets/images/banner.png",
   ];
 
   @override
@@ -33,7 +32,7 @@ class _HomePageState extends State<HomePage> {
           ),
           CarouselSlider.builder(
             options: CarouselOptions(
-                height: 250,
+                height: 200,
                 enlargeCenterPage: true,
                 viewportFraction: 1.0,
                 autoPlay: true,
@@ -62,7 +61,7 @@ class _HomePageState extends State<HomePage> {
                   style: TextStyle(
                       fontSize: 18,
                       color: Colors.grey,
-                      fontWeight: FontWeight.bold),
+                      fontWeight: FontWeight.w500),
                 ),
                 Icon(Icons.arrow_forward_ios),
               ],
@@ -91,14 +90,14 @@ class _HomePageState extends State<HomePage> {
                   ontap: () {
                     Navigator.pushNamed(context, "/vtypeuser");
                   },
-                  urlimage: 'assets/images/2.png',
+                  urlimage: 'assets/images/4.png',
                 ),
                 GridWidget(
                   urltext: 'View Request',
                   ontap: () {
                     Navigator.pushNamed(context, "/requestScreenUser");
                   },
-                  urlimage: 'assets/images/3.png',
+                  urlimage: 'assets/images/4.png',
                 ),
                 GridWidget(
                   urltext: 'Settings',
@@ -117,7 +116,6 @@ class _HomePageState extends State<HomePage> {
         decoration: BoxDecoration(
           image: DecorationImage(
               fit: BoxFit.fill, image: AssetImage((sliderimage))),
-          borderRadius: BorderRadius.circular(10),
           border: Border.all(width: 0, color: Colors.black54),
           color: Colors.grey,
         ),

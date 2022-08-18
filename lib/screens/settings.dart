@@ -19,10 +19,11 @@ class _SettingsState extends State<Settings>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffd6e7d6),
         key: globalKey,
         appBar: AppBar(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20.0))),
           backgroundColor: Colors.white,
-          elevation: 0.0,
           leading: IconButton(
             icon: Icon(
               Icons.menu,
@@ -39,7 +40,7 @@ class _SettingsState extends State<Settings>
         drawer: Drawer(),
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(12.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -48,20 +49,21 @@ class _SettingsState extends State<Settings>
                   style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
                 ),
                 SizedBox(height: 10.0,),
-                SettingsTile(iconImg: 'set1.png', text: 'Mes annonces',),
-                SettingsTile(iconImg: 'set2.png', text: 'Mes favoris',),
+                SettingsTile(iconImg: Icons.folder, text: 'Mes annonces',),
+                SettingsTile(iconImg: Icons.bookmark, text: 'Mes favoris',),
                 Text(
                   "Reglages",
                   style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
                 ),
                 SizedBox(height: 10.0,),
-                SettingsTile(iconImg: 'set3.png', text: 'Photo',),
-                SettingsTile(iconImg: 'set4.png', text: 'Nom',),
-                SettingsTile(iconImg: 'set5.png', text: 'Phone',),
-                SettingsTile(iconImg: 'set6.png', text: 'Email',),
-                SettingsTile(iconImg: 'set7.png', text: 'Mot de passe',),
-                SettingsTile(iconImg: 'set9.png', text: 'Notifications',),
-                SettingsTile(iconImg: 'set10.png', text: 'Supprimer le compte',),
+                SettingsTile(iconImg:Icons.person_pin, text: 'Photo',),
+                SettingsTile(iconImg: Icons.person, text: 'Nom',),
+                SettingsTile(iconImg: Icons.phone, text: 'Phone',),
+                SettingsTile(iconImg: Icons.email, text: 'Email',),
+                SettingsTile(iconImg: Icons.lock, text: 'Mot de passe',),
+                SettingsTile(iconImg: Icons.notifications, text: 'Notifications',),
+                SettingsTile(iconImg: Icons.logout, text: 'Supprimer le compte',),
+                SizedBox(height: 60.0,),
               ],
             ),
           ),

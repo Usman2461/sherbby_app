@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter_rating_stars/flutter_rating_stars.dart';
 
 // ignore: must_be_immutable
 class GridWidget extends StatelessWidget {
@@ -21,56 +21,58 @@ class GridWidget extends StatelessWidget {
           ontap();
         },
         child: Card(
+          clipBehavior: Clip.hardEdge,
           elevation: 5.0,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 4.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  height: 150,
-                  clipBehavior: Clip.hardEdge,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+            bottomRight: Radius.circular(20.0),
+            bottomLeft: Radius.circular(8.0),
+            topRight: Radius.circular(8.0),
+            topLeft: Radius.circular(8.0),
+          )),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                height: 150,
+                clipBehavior: Clip.hardEdge,
+                decoration: BoxDecoration(),
+                child: Image(
+                  image: AssetImage(
+                    urlimage,
                   ),
-                  child: Image(
-                    image: AssetImage(
-                      urlimage,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      urltext,
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w600),
                     ),
-                    fit: BoxFit.cover,
-                  ),
+                    Text(
+                      "CFA50,000",
+                      style: TextStyle(
+                          fontWeight: FontWeight.w600, color: Colors.green),
+                    ),
+                    Text(
+                      "Ouagadougou - Burkina faso",
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    RatingStars(
+                      valueLabelVisibility: false,
+                    )
+
+                  ],
                 ),
-                Text(
-                  urltext,
-                  style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w600),
-                ),
-                Container(
-                  width: 55,
-                  padding: EdgeInsets.symmetric(horizontal: 4.0),
-                  decoration: BoxDecoration(
-                      color: Colors.green,
-                      borderRadius: BorderRadius.circular(10.0)),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "4.5",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      Icon(
-                        Icons.star,
-                        color: Colors.white,
-                      ),
-                    ],
-                  ),
-                ),
-                Text("CFA50,000", style: TextStyle(fontWeight: FontWeight.w600, color: Colors.green),),
-                Text("Ouagadougou - Burkina faso", overflow: TextOverflow.ellipsis,)
-              ],
-            ),
+              )
+            ],
           ),
         ));
   }

@@ -40,6 +40,7 @@ class _ChatScreenState extends State<ChatScreen> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20.0))),
         backgroundColor: Colors.white,
         leading: GestureDetector(
             onTap: () {
@@ -82,7 +83,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   ),
                 ),
                 Container(
-                  color: Colors.lightBlue,
+                  color: Colors.transparent,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: SizedBox(
@@ -108,13 +109,13 @@ class _ChatScreenState extends State<ChatScreen> {
             ),
           ),
           Container(
-            color: Colors.lightBlue,
+            color: Colors.green,
             height: 80,
             width: MediaQuery.of(context).size.width,
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Row(
               children: [
-                CircleAvatar(child: Icon(Icons.person, color: Colors.white,), backgroundColor: Colors.lightBlue,),
+                CircleAvatar(child: Icon(Icons.person, color: Colors.black,), backgroundColor: Colors.white,),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: Text(
@@ -137,7 +138,7 @@ class _ChatScreenState extends State<ChatScreen> {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CircleAvatar(backgroundColor: Colors.lightBlue, child: Icon(Icons.person, color: Colors.white,), ),
+          CircleAvatar(backgroundColor: Colors.green, child: Icon(Icons.person, color: Colors.black,), ),
           SizedBox(width: 10.0,),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -164,7 +165,7 @@ class _ChatScreenState extends State<ChatScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  decoration: BoxDecoration(color: Colors.lightBlue, borderRadius: BorderRadius.circular(20.0)),
+                  decoration: BoxDecoration(color: Colors.black54, borderRadius: BorderRadius.circular(20.0)),
                   padding: EdgeInsets.all(10.0),
                   width: 200,child: Text(messages[index].messageContent, style: TextStyle(color: Colors.white),) ,),
                 Padding(
@@ -174,7 +175,7 @@ class _ChatScreenState extends State<ChatScreen> {
               ],
             ),
             SizedBox(width: 10.0,),
-            CircleAvatar(backgroundColor: Colors.lightBlue, child: Icon(Icons.person, color: Colors.white,), )
+            CircleAvatar(backgroundColor: Colors.black45, child: Icon(Icons.person, color: Colors.white,), )
           ],
         ),
       ),

@@ -8,15 +8,18 @@ class NotificationTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: Container(
-        width: 20,
-        height: 20,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(4.0),
-            color: Colors.green,
-            border: Border.all(color: Colors.black, width: 2) )),
-      title: Text(notificationTitle),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Card(
+        color: Color(0xffd6e7d6),
+        clipBehavior: Clip.hardEdge,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomRight: Radius.circular(20.0))),
+        child: ListTile(
+          tileColor: Color(0xffd6e7d6),
+          leading: CircleAvatar(child: Icon(Icons.notifications_active, color: Colors.green,),backgroundColor: Colors.white,),
+          title: Text(notificationTitle),
+        ),
+      ),
     );
   }
 }

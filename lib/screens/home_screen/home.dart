@@ -14,8 +14,10 @@ class _HomeState extends State<Home> {
     return DefaultTabController(
       length: 5,
       child: Scaffold(
+        backgroundColor: Colors.white,
         drawer: Drawer(),
         appBar: AppBar(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20.0))),
           leading: Builder(
             builder: (context) {
               return IconButton(
@@ -36,33 +38,42 @@ class _HomeState extends State<Home> {
           ],
           backgroundColor: Colors.white,
           title: Text(
-            "Image",
+            "Home",
             style: TextStyle(color: Colors.grey),
           ),
           centerTitle: true,
-          bottom: TabBar(
-            isScrollable: true,
-            labelColor: Colors.green,
-            indicatorColor: Colors.green,
-            indicatorWeight: 8.0,
-            unselectedLabelColor: Colors.grey,
-            tabs: [
-              Tab(
-                text: "Tout",
+          bottom: PreferredSize(
+            preferredSize: Size(MediaQuery.of(context).size.width,50),
+            child: Card(
+              elevation: 0.0,
+              clipBehavior: Clip.hardEdge,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20.0))),
+
+              child: TabBar(
+                isScrollable: true,
+                labelColor: Colors.green,
+                indicatorColor: Colors.green,
+                indicatorWeight: 8.0,
+                unselectedLabelColor: Colors.grey,
+                tabs: [
+                  Tab(
+                    text: "Tout",
+                  ),
+                  Tab(
+                    text: "Arts / Culture",
+                  ),
+                  Tab(
+                    text: "Maisons",
+                  ),
+                  Tab(
+                    text: "Electroniques",
+                  ),
+                  Tab(
+                    text: "Dresses",
+                  ),
+                ],
               ),
-              Tab(
-                text: "Arts / Culture",
-              ),
-              Tab(
-                text: "Maisons",
-              ),
-              Tab(
-                text: "Electroniques",
-              ),
-              Tab(
-                text: "Dresses",
-              ),
-            ],
+            ),
           ),
         ),
         body: TabBarView(
