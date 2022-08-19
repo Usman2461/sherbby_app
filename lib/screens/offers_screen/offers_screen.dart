@@ -10,43 +10,43 @@ class OffersScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20.0))),
-        title: Text(
-          "Choisissez votre pack",
-          style: TextStyle(
-              color: Colors.black, fontSize: 22.0, fontWeight: FontWeight.bold),
-        ),
-      ),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(
-                height: 30.0,
-              ),
-              packageContainer(
-                  context, Colors.orange, "PACK1", "5", "30", "2", "7200",
-                  () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => RegisterScreen()));
-              }),
-              packageContainer(context, Color(0xff2c2b2b), "PACK2", "7", "45",
-                  "3", "12600", () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => RegisterScreen()));
-              }),
-              packageContainer(
-                  context, Colors.redAccent, "PACK3", "15", "60", "4", "14800", () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => RegisterScreen()));
-              }),
-            ],
-          ),
-        ),
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.white,
+      //   shape: RoundedRectangleBorder(
+      //       borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20.0))),
+      //   title: Text(
+      //     "Choisissez votre pack",
+      //     style: TextStyle(
+      //         color: Colors.black, fontSize: 22.0, fontWeight: FontWeight.bold),
+      //   ),
+      // ),
+      // body: SafeArea(
+      //   child: SingleChildScrollView(
+      //     child: Column(
+      //       children: [
+      //         SizedBox(
+      //           height: 30.0,
+      //         ),
+      //         packageContainer(
+      //             context, Colors.orange, "PACK1", "5", "30", "2", "7200",
+      //             () {
+      //           Navigator.push(context,
+      //               MaterialPageRoute(builder: (context) => RegisterScreen()));
+      //         }),
+      //         packageContainer(context, Color(0xff2c2b2b), "PACK2", "7", "45",
+      //             "3", "12600", () {
+      //           Navigator.push(context,
+      //               MaterialPageRoute(builder: (context) => RegisterScreen()));
+      //         }),
+      //         packageContainer(
+      //             context, Colors.redAccent, "PACK3", "15", "60", "4", "14800", () {
+      //           Navigator.push(context,
+      //               MaterialPageRoute(builder: (context) => RegisterScreen()));
+      //         }),
+      //       ],
+      //     ),
+      //   ),
+      // ),
     );
   }
 
