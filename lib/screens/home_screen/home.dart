@@ -23,7 +23,7 @@ class _HomeState extends State<Home> {
               return IconButton(
                 onPressed: () => Scaffold.of(context).openDrawer(),
                 icon: ImageIcon(
-                  AssetImage("assets/images/set10.png"),
+                  AssetImage("assets/images/drawericon.png"),
                   color: Colors.green,
                 ),
               );
@@ -37,10 +37,7 @@ class _HomeState extends State<Home> {
             )
           ],
           backgroundColor: Colors.white,
-          title: Text(
-            "Home",
-            style: TextStyle(color: Colors.grey),
-          ),
+          title: Image(image: AssetImage("assets/images/iconsherby.png"),height: 25, width: 25,),
           centerTitle: true,
           // bottom: PreferredSize(
           //   preferredSize: Size(MediaQuery.of(context).size.width,50),
