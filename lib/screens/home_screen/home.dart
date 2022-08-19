@@ -16,66 +16,66 @@ class _HomeState extends State<Home> {
       child: Scaffold(
         backgroundColor: Colors.white,
         drawer: Drawer(),
-        // appBar: AppBar(
-        //   shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20.0))),
-        //   leading: Builder(
-        //     builder: (context) {
-        //       return IconButton(
-        //         onPressed: () => Scaffold.of(context).openDrawer(),
-        //         icon: ImageIcon(
-        //           AssetImage("assets/images/set10.png"),
-        //           color: Colors.green,
-        //         ),
-        //       );
-        //     },
-        //   ),
-        //   actions: [
-        //     IconButton(
-        //       onPressed: () {},
-        //       icon: Icon(Icons.search,color: Colors.green,
-        //       size: 32,),
-        //     )
-        //   ],
-        //   backgroundColor: Colors.white,
-        //   title: Text(
-        //     "Home",
-        //     style: TextStyle(color: Colors.grey),
-        //   ),
-        //   centerTitle: true,
-        //   bottom: PreferredSize(
-        //     preferredSize: Size(MediaQuery.of(context).size.width,50),
-        //     child: Card(
-        //       elevation: 0.0,
-        //       clipBehavior: Clip.hardEdge,
-        //       shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20.0))),
-        //
-        //       child: TabBar(
-        //         isScrollable: true,
-        //         labelColor: Colors.green,
-        //         indicatorColor: Colors.green,
-        //         indicatorWeight: 8.0,
-        //         unselectedLabelColor: Colors.grey,
-        //         tabs: [
-        //           Tab(
-        //             text: "Tout",
-        //           ),
-        //           Tab(
-        //             text: "Arts / Culture",
-        //           ),
-        //           Tab(
-        //             text: "Maisons",
-        //           ),
-        //           Tab(
-        //             text: "Electroniques",
-        //           ),
-        //           Tab(
-        //             text: "Dresses",
-        //           ),
-        //         ],
-        //       ),
-        //     ),
-        //   ),
-        // ),
+        appBar: AppBar(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20.0))),
+          leading: Builder(
+            builder: (context) {
+              return IconButton(
+                onPressed: () => Scaffold.of(context).openDrawer(),
+                icon: ImageIcon(
+                  AssetImage("assets/images/set10.png"),
+                  color: Colors.green,
+                ),
+              );
+            },
+          ),
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.search,color: Colors.green,
+              size: 32,),
+            )
+          ],
+          backgroundColor: Colors.white,
+          title: Text(
+            "Home",
+            style: TextStyle(color: Colors.grey),
+          ),
+          centerTitle: true,
+          // bottom: PreferredSize(
+          //   preferredSize: Size(MediaQuery.of(context).size.width,50),
+          //   child: Card(
+          //     elevation: 0.0,
+          //     clipBehavior: Clip.hardEdge,
+          //     shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20.0))),
+          //
+          //     child: TabBar(
+          //       isScrollable: true,
+          //       labelColor: Colors.green,
+          //       indicatorColor: Colors.green,
+          //       indicatorWeight: 8.0,
+          //       unselectedLabelColor: Colors.grey,
+          //       tabs: [
+          //         Tab(
+          //           text: "Tout",
+          //         ),
+          //         Tab(
+          //           text: "Arts / Culture",
+          //         ),
+          //         Tab(
+          //           text: "Maisons",
+          //         ),
+          //         Tab(
+          //           text: "Electroniques",
+          //         ),
+          //         Tab(
+          //           text: "Dresses",
+          //         ),
+          //       ],
+          //     ),
+          //   ),
+          // ),
+        ),
         // body: TabBarView(
         //   children: [
         //     HomePage(),
