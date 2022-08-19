@@ -39,96 +39,96 @@ class _ChatScreenState extends State<ChatScreen> {
     GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
     return Scaffold(
       key: scaffoldKey,
-      appBar: AppBar(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20.0))),
-        backgroundColor: Colors.white,
-        leading: GestureDetector(
-            onTap: () {
-              scaffoldKey.currentState!.openDrawer();
-            },
-            child: Icon(
-              Icons.menu,
-              color: Colors.black,
-            )),
-        title: Text(
-          "SHERBBY",
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-        ),
-      ),
-      drawer: Drawer(),
-      body: Stack(
-        children: [
-          Padding(
-            padding: EdgeInsets.only(
-              top: 30.0,
-              bottom: 0,
-            ),
-            child: Column(
-              children: [
-                Container(
-                  height: MediaQuery.of(context).size.height -
-                      kBottomNavigationBarHeight -
-                      200,
-                  child: ListView.builder(
-                    itemCount: messages.length,
-                    shrinkWrap: true,
-                    padding: EdgeInsets.only(top: 10, bottom: 10),
-                    itemBuilder: (context, index) {
-                      if (index % 2 == 0) {
-                        return chat_bubble_widget2(index);
-                      } else {
-                        return chat_bubble_widget(index);
-                      }
-                    },
-                  ),
-                ),
-                Container(
-                  color: Colors.transparent,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SizedBox(
-                        width: MediaQuery.of(context).size.width,
-                        height: 40,
-                        child: TextField(
-                          decoration: InputDecoration(
-                              contentPadding: EdgeInsets.all(10.0),
-                              hintText: "write a message...",
-                              hintStyle: TextStyle(color: Colors.grey),
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(20.0)),
-                              fillColor: Colors.white,
-                              filled: true,
-                              suffixIcon: Icon(
-                                Icons.send,
-                                color: Colors.black,
-                              )),
-                        )),
-                  ),
-                )
-              ],
-            ),
-          ),
-          Container(
-            color: Colors.green,
-            height: 80,
-            width: MediaQuery.of(context).size.width,
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-              children: [
-                CircleAvatar(child: Icon(Icons.person, color: Colors.black,), backgroundColor: Colors.white,),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: Text(
-                    "Hety",
-                    style: TextStyle(fontWeight: FontWeight.w500, color: Colors.white, fontSize: 24.0),
-                  ),
-                ),
-                Text("(bloquer un utillisateur)", style: TextStyle(color: Colors.white),)
-              ],
-            ),
-          )
-        ],
-      ),
+      // appBar: AppBar(
+      //   shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20.0))),
+      //   backgroundColor: Colors.white,
+      //   leading: GestureDetector(
+      //       onTap: () {
+      //         scaffoldKey.currentState!.openDrawer();
+      //       },
+      //       child: Icon(
+      //         Icons.menu,
+      //         color: Colors.black,
+      //       )),
+      //   title: Text(
+      //     "SHERBBY",
+      //     style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+      //   ),
+      // ),
+      // drawer: Drawer(),
+      // body: Stack(
+      //   children: [
+      //     Padding(
+      //       padding: EdgeInsets.only(
+      //         top: 30.0,
+      //         bottom: 0,
+      //       ),
+      //       child: Column(
+      //         children: [
+      //           Container(
+      //             height: MediaQuery.of(context).size.height -
+      //                 kBottomNavigationBarHeight -
+      //                 200,
+      //             child: ListView.builder(
+      //               itemCount: messages.length,
+      //               shrinkWrap: true,
+      //               padding: EdgeInsets.only(top: 10, bottom: 10),
+      //               itemBuilder: (context, index) {
+      //                 if (index % 2 == 0) {
+      //                   return chat_bubble_widget2(index);
+      //                 } else {
+      //                   return chat_bubble_widget(index);
+      //                 }
+      //               },
+      //             ),
+      //           ),
+      //           Container(
+      //             color: Colors.transparent,
+      //             child: Padding(
+      //               padding: const EdgeInsets.all(8.0),
+      //               child: SizedBox(
+      //                   width: MediaQuery.of(context).size.width,
+      //                   height: 40,
+      //                   child: TextField(
+      //                     decoration: InputDecoration(
+      //                         contentPadding: EdgeInsets.all(10.0),
+      //                         hintText: "write a message...",
+      //                         hintStyle: TextStyle(color: Colors.grey),
+      //                         border: OutlineInputBorder(
+      //                             borderRadius: BorderRadius.circular(20.0)),
+      //                         fillColor: Colors.white,
+      //                         filled: true,
+      //                         suffixIcon: Icon(
+      //                           Icons.send,
+      //                           color: Colors.black,
+      //                         )),
+      //                   )),
+      //             ),
+      //           )
+      //         ],
+      //       ),
+      //     ),
+      //     Container(
+      //       color: Colors.green,
+      //       height: 80,
+      //       width: MediaQuery.of(context).size.width,
+      //       padding: EdgeInsets.symmetric(horizontal: 20),
+      //       child: Row(
+      //         children: [
+      //           CircleAvatar(child: Icon(Icons.person, color: Colors.black,), backgroundColor: Colors.white,),
+      //           Padding(
+      //             padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      //             child: Text(
+      //               "Hety",
+      //               style: TextStyle(fontWeight: FontWeight.w500, color: Colors.white, fontSize: 24.0),
+      //             ),
+      //           ),
+      //           Text("(bloquer un utillisateur)", style: TextStyle(color: Colors.white),)
+      //         ],
+      //       ),
+      //     )
+      //   ],
+      // ),
     );
   }
 
